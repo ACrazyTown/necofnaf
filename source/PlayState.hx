@@ -33,13 +33,12 @@ class PlayState extends FlxState
 	{
 		FlxG.mouse.visible = true;
 
-		FlxG.cameras.reset();
-
 		scrollCamera = new FlxCamera(0, 0, FlxG.width, FlxG.height);
 		scrollCamera.setFilters([new ShaderFilter(new PanoramaDistortionShader())]);
 		FlxG.cameras.add(scrollCamera, false);
 
-		FlxG.cameras.setDefaultDrawTarget(FlxG.camera, true);
+		var gameCamera:FlxCamera = new FlxCamera(0,0,FlxG.width,FlxG.height);
+		FlxG.cameras.add(gameCamera, true);
 
 		officeBackground = new FlxSprite().loadGraphic("assets/images/office.png");
 		officeBackground.screenCenter();

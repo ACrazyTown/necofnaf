@@ -32,8 +32,7 @@ class PanoramaDistortionShader extends FlxShader
             dir = -1.0;
 
         coordinates = vec2(openfl_TextureCoordv.x, openfl_TextureCoordv.y + pixelDistanceX * (offset * 8.0 * dir));
-        vec4 test = flixel_texture2D(bitmap, coordinates);
-        gl_FragColor = test;
+        gl_FragColor = flixel_texture2D(bitmap, coordinates);
     }
     ')
 
